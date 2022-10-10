@@ -5,8 +5,6 @@
 const express = require('express');
 const cors = require('cors');
 
-require('dotenv').config();
-
 // Define an instance of Express (app)
 const app = express();
 
@@ -38,8 +36,6 @@ app.use(express.urlencoded({ extended: true }));
 // Routes - Configure app Routes to handle requests from browser
 // These will be redirected to a controller
 app.use('/', require('./controllers/index'));
-
-app.use('/product', require('./controllers/productController'));
 
 // Globally catch 404 and forward to error handler
 app.use(function (req, res, next) {
